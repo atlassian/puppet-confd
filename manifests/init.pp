@@ -40,7 +40,7 @@ class confd(
   validate_absolute_path($confdir)
   validate_hash($resources)
   validate_string($user)
-  validate_string($user)
+  validate_string($group)
 
   if $backend { validate_re($backend, ['^etcd$', '^consul$', '^zookeeper$', '^dynamodb$', '^redis$', '^env$']) }
   if $interval { validate_re($interval, '^\d+') }
