@@ -7,6 +7,7 @@ class confd::params {
   $confdir    = '/etc/confd'
   $version    = 'latest'
   $user       = 'root'
+  $group      = 'root'
   $enable     = true
   $ensure = 'running'
   $sitemodule = 'site_confd'

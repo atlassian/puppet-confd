@@ -6,6 +6,8 @@ class confd(
   $version       = $confd::params::version,
   $installdir    = $confd::params::installdir,
   $sitemodule    = $confd::params::sitemodule,
+  $user          = $confd::params::user,
+  $group         = $confd::params::group,
 
   $confdir       = $confd::params::confdir,
   $nodes         = $confd::params::nodes,
@@ -37,6 +39,8 @@ class confd(
   validate_string($sitemodule)
   validate_absolute_path($confdir)
   validate_hash($resources)
+  validate_string($user)
+  validate_string($user)
 
   if $backend { validate_re($backend, ['^etcd$', '^consul$', '^zookeeper$', '^dynamodb$', '^redis$', '^env$']) }
   if $interval { validate_re($interval, '^\d+') }
