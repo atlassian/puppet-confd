@@ -6,5 +6,8 @@ After=network.target
 ExecStart=<%= scope.lookupvar('::confd::installdir') %>/confd
 ExecStop=/bin/kill -s TERM $MAINPID
 
+User=<% scope.lookupvar('::confd::user') %>
+Group=<% scope.lookupvar('::confd::group') %>
+
 [Install]
 WantedBy=multi-user.target
